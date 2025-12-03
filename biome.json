@@ -31,11 +31,57 @@
     "enabled": true,
     "rules": {
       "recommended": true,
+      "style": {
+        "noRestrictedImports": {
+          "level": "error",
+          "options": {
+            "paths": {
+              "lucide-react": {
+                "importNames": ["Link"],
+                "message": "You probably meant to import <Link /> from @/i18n/routing"
+              },
+              "next/link": "Please use @/i18n/routing for locale support",
+              "next/navigation": "Please use @/i18n/routing for locale support"
+            },
+            "patterns": [
+              {
+                "group": "@radix-ui/*",
+                "message": "You probably meant to import from @/components/ui/*"
+              }
+            ]
+          }
+        }
+      },
       "suspicious": {
         "noUnknownAtRules": "off"
       }
     }
   },
+  "overrides": [
+    {
+      "includes": ["src/components/ui/**/*.{ts,tsx}"],
+      "linter": {
+        "rules": {
+          "style": {
+            "noRestrictedImports": {
+              "level": "error",
+              "options": {
+                "paths": {
+                  "lucide-react": {
+                    "importNames": ["Link"],
+                    "message": "You probably meant to import <Link /> from @/i18n/routing"
+                  },
+                  "next/link": "Please use @/i18n/routing for locale support",
+                  "next/navigation": "Please use @/i18n/routing for locale support"
+                },
+                "patterns": []
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
   "vcs": {
     "clientKind": "git",
     "enabled": true,
