@@ -30,6 +30,12 @@
     },
     "enabled": true,
     "rules": {
+      "correctness": {
+        "useExhaustiveDependencies": {
+          "fix": "safe",
+          "level": "error"
+        }
+      },
       "recommended": true,
       "style": {
         "noRestrictedImports": {

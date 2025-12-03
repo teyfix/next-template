@@ -4,7 +4,7 @@ export async function NotFoundPage() {
   const t = await getTranslations("notFound");
 
   return (
-    <div className="grid h-screen place-items-center">
+    <div className="grid h-screen w-full place-items-center">
       <section>
         <header>
           <h1 className="text-xl font-semibold">{t("header.title")}</h1>

@@ -18,3 +18,42 @@ notFound:
     title: Not Found
   main:
     description: The page you are looking for does not exist.
+
+modeToggle:
+  option:
+    dark: Dark
+    light: Light
+    system: Default
+
+dashboard:
+  sidebar:
+    header:
+      account:
+        label: Account
+        details:
+          label: Account Details
+      session:
+        label: Session
+        signOut:
+          label: Sign Out
+
+    content:
+      admin:
+        label: Admin
+        users:
+          label: Users
+        customers:
+          label: Customers
+      customer:
+        label: Customer
+        contacts:
+          label: Contacts
+        calendar:
+          label: Calendar
+        reports:
+          label: Reports
+
+admin:
+  users:
+    header:
+      title: Users

@@ -18,3 +18,42 @@ notFound:
     title: Sayfa Bulunamadı
   main:
     description: Aradığınız sayfa bulunamadı.
+
+modeToggle:
+  option:
+    dark: Koyu
+    light: Açık
+    system: Varsayılan
+
+dashboard:
+  sidebar:
+    header:
+      account:
+        label: Hesap
+        details:
+          label: Hesap Bilgileri
+      session:
+        label: Oturum
+        signOut:
+          label: Çıkış Yap
+
+    content:
+      admin:
+        label: Yönetici
+        users:
+          label: Kullanıcılar
+        customers:
+          label: Müşteriler
+      customer:
+        label: Panel
+        contacts:
+          label: Rehber
+        calendar:
+          label: Takvim
+        reports:
+          label: Raporlar
+
+admin:
+  users:
+    header:
+      title: Kullanıcılar
