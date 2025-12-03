@@ -1,0 +1,20 @@
+welcome:
+  logo:
+    alt: Next.js logosu
+  hero:
+    title: Başlamak için, page.tsx dosyasını düzenleyin.
+    description:
+      Bir başlangıç noktası veya daha fazla kaynak mı arıyorsunuz?
+      <templates>Şablon</templates> veya <learning>Öğrenme</learning> merkezine
+      gidin.
+  cta:
+    deploy:
+      label: Şimdi Yayınla
+    docs:
+      label: Dokümantasyon
+
+notFound:
+  header:
+    title: Sayfa Bulunamadı
+  main:
+    description: Aradığınız sayfa bulunamadı.
