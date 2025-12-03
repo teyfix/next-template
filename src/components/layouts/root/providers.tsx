@@ -1,4 +1,5 @@
 import { NextIntlClientProvider } from "next-intl";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
 import type { PropsWithChildren } from "react";
 import type { AppLocale } from "@/i18n/locales";
 import { ReactQueryProvider } from "./providers/react-query.provider";
@@ -10,7 +11,9 @@ export async function Providers(
   return (
     <NextIntlClientProvider locale={props.locale}>
       <ReactQueryProvider>
-        <ThemeProvider>{props.children}</ThemeProvider>
+        <ThemeProvider>
+          <NuqsAdapter>{props.children}</NuqsAdapter>
+        </ThemeProvider>
       </ReactQueryProvider>
     </NextIntlClientProvider>
   );
