@@ -1,0 +1,28 @@
+pre-commit:
+  parallel: true
+  commands:
+    check:
+      glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx}"
+      run:
+        bun x @biomejs/biome check --write --no-errors-on-unmatched
+        --files-ignore-unknown=true --colors=off {staged_files}
+      stage_fixed: true
+    typescript:
+      glob: "*.{js,ts,jsx,tsx}"
+      run: |
+        if [ ! -f next-env.d.ts ]; then
+          bun x next typegen
+        fi
+
+        bun x tsc --noEmit --project tsconfig.json
+    package-json:
+      glob: package.json
+      run: |
+        bun install
+        bun x prettier --write package.json
+        git add bun.lock
+      stage_fixed: true
+    prettier:
+      glob: "*.{yml,yaml,md,svg,sql,json,jsonc}"
+      run: bun x prettier --write {staged_files}
+      stage_fixed: true

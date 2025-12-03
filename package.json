@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "dev": "next dev",
+    "format": "biome format --write",
     "lint": "biome check",
-    "format": "biome format --write"
+    "start": "next start"
   },
   "dependencies": {
+    "lefthook": "^2.0.7",
     "next": "16.0.7",
     "react": "19.2.0",
     "react-dom": "19.2.0"
