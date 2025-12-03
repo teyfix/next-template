@@ -1,0 +1,19 @@
+.dockerignore
+.env*
+.git
+.gitignore
+.history
+.next
+# bun.lock
+# next.config.ts
+# package.json
+# postcss.config.mjs
+# public
+# src
+# tsconfig.json
+biome.json
+docker-compose.yaml
+Dockerfile.bun
+next-env.d.ts
+node_modules
+README.md

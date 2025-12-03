@@ -1,0 +1,65 @@
+networks:
+  traefik:
+    name: traefik_proxy
+    external: true
+
+configs:
+  idle-entrypoint:
+    content: |
+      #!/bin/sh
+      trap "exit 0" TERM INT
+      echo "Container started"
+      tail -f /dev/null &
+      wait $!
+
+services:
+  next:
+    build:
+      context: ${PWD}
+      dockerfile: Dockerfile.bun
+    restart: unless-stopped
+    expose:
+      - 3000
+    networks:
+      traefik:
+    volumes:
+      - ${PWD}/.env.staging:/app/.env:ro
+    labels:
+      # Enable Traefik
+      - "traefik.enable=true"
+
+      # Create the HTTP service for Keycloak
+      - "traefik.http.services.${TRAEFIK_PREFIX}_next.loadBalancer.server.port=3000"
+
+      # Create a router to expose Keycloak service
+      - "traefik.http.routers.${TRAEFIK_PREFIX}_next.rule=Host(`${TRAEFIK_DOMAIN}`)"
+      - "traefik.http.routers.${TRAEFIK_PREFIX}_next.entryPoints=${TRAEFIK_HTTPS_ENTRY_POINT}"
+      - "traefik.http.routers.${TRAEFIK_PREFIX}_next.tls=true"
+      - "traefik.http.routers.${TRAEFIK_PREFIX}_next.tls.certResolver=${TRAEFIK_CERT_RESOLVER}"
+      - "traefik.http.routers.${TRAEFIK_PREFIX}_next.service=${TRAEFIK_PREFIX}_next"
+
+  next-dev:
+    image: busybox
+    command: sh /idle-entrypoint
+    restart: unless-stopped
+    expose:
+      - 3000
+    networks:
+      traefik:
+    labels:
+      # Enable Traefik
+      - "traefik.enable=true"
+
+      # Create the HTTP service for Keycloak
+      - "traefik.http.services.${TRAEFIK_PREFIX}_next_dev.loadBalancer.server.url=http://host.docker.internal:3000"
+
+      # Create a router to expose Keycloak service
+      - "traefik.http.routers.${TRAEFIK_PREFIX}_next_dev.rule=Host(`dev.${TRAEFIK_DOMAIN}`)"
+      - "traefik.http.routers.${TRAEFIK_PREFIX}_next_dev.entryPoints=${TRAEFIK_HTTPS_ENTRY_POINT}"
+      - "traefik.http.routers.${TRAEFIK_PREFIX}_next_dev.tls=true"
+      - "traefik.http.routers.${TRAEFIK_PREFIX}_next_dev.tls.certResolver=${TRAEFIK_CERT_RESOLVER}"
+      - "traefik.http.routers.${TRAEFIK_PREFIX}_next_dev.service=${TRAEFIK_PREFIX}_next_dev"
+    configs:
+      - idle-entrypoint
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
