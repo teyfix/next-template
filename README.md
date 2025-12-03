@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js App Router Starter Template
 
-## Getting Started
+This is a **personal Next.js App Router starter template** for quickly
+bootstrapping projects with commonly used tools and patterns. It's designed to
+save setup time while maintaining flexibility for different project needs.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Current Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Localization:** `next-intl` for multi-language support
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Theming:** `next-themes` with light/dark mode
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Server State:** `React Query` with default caching and refetching strategies
 
-## Learn More
+- **Dashboard Layout:** reusable sidebar, header, footer, and utility UI
+  components
 
-To learn more about Next.js, take a look at the following resources:
+- **Code Quality:**
+  - Biome for formatting and linting
+  - Prettier for additional file extensions
+  - Integrated with Lefthook during commits
+  - Lefthook for Git hooks with pre-commit and commit-msg checks
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+  Example Lefthook configuration:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Icons/UI:** `shadcn` components using `Radix UI`, `Lucide` icons,
+  `Tailwind CSS` utilities, and `react-icons`
 
-## Deploy on Vercel
+All providers (intl, theme, React Query, Nuqs adapter) are organized under a
+single `Providers` component for easy setup.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Planned Additions
+
+- **Authentication:** `Better Auth` integration
+- **Database:** `Drizzle ORM` + `Neon database` support
+- **CSS-in-JS:** `@tw-classed/react` will be added soon
+
+---
+
+## Development & Deployment
+
+- Supports **Docker-based development**
+- Exposed via **Traefik** for easy reverse proxy configuration
+- Includes a lightweight dev service for local testing
+
+> [!TIP]  
+> Checkout [teyfix/traefik](https://github.com/teyfix/traefik) for SSL-enabled
+> local development
+
+---
+
+## Purpose
+
+This repo is **my personal template** to quickly spin up Next.js projects with:
+
+- Multi-language support
+- Dashboard-ready UI
+- Built-in theming and server state management
+- Easy Docker + Traefik deployment
+- Preconfigured code quality and commit workflow
