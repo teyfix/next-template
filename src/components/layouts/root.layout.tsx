@@ -1,21 +1,11 @@
 import "@/theme/globals.css";
 
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import type { PropsWithChildren } from "react";
 import { getLocaleParam } from "@/i18n/getLocaleParam";
+import { fontMono, fontSans } from "@/theme/fonts";
 import type { RouteProps } from "@/types/route-props";
 import { Providers } from "./root/providers";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -27,9 +17,7 @@ export async function RootLayout(props: PropsWithChildren<RouteProps>) {
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${fontSans.variable} ${fontMono.variable} antialiased`}>
         <Providers locale={locale}>{props.children}</Providers>
       </body>
     </html>
