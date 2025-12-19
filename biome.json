@@ -46,6 +46,7 @@
                 "importNames": ["Link"],
                 "message": "You probably meant to import <Link /> from @/i18n/routing"
               },
+              "next/image": "Please use @/components/image for better image optimization",
               "next/link": "Please use @/i18n/routing for locale support",
               "next/navigation": "Please use @/i18n/routing for locale support"
             },
@@ -77,6 +78,7 @@
                     "importNames": ["Link"],
                     "message": "You probably meant to import <Link /> from @/i18n/routing"
                   },
+                  "next/image": "Please use @/components/image for better image optimization",
                   "next/link": "Please use @/i18n/routing for locale support",
                   "next/navigation": "Please use @/i18n/routing for locale support"
                 },

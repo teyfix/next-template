@@ -12,6 +12,10 @@ const nextConfig: NextConfig = {
         loaders: ["yaml-loader"],
         as: "*.js",
       },
+      "*.svg": {
+        loaders: ["@svgr/webpack"],
+        as: "*.js",
+      },
     },
   },
 };

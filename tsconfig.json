@@ -10,7 +10,8 @@
     "moduleResolution": "bundler",
     "noEmit": true,
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "~/*": ["./*"]
     },
     "plugins": [
       {
@@ -24,6 +25,7 @@
   },
   "exclude": ["node_modules"],
   "include": [
+    "src/types/svgr.d.ts",
     ".next/dev/types/**/*.ts",
     ".next/types/**/*.ts",
     "**/*.mts",

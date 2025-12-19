@@ -1,4 +1,5 @@
 import type { PropsWithChildren } from "react";
+import NextLogo from "~/public/next.svg";
 import { LangToggle } from "../ui/lang-toggle";
 import { ModeToggle } from "../ui/mode-toggle";
 import {
@@ -33,6 +34,11 @@ export async function DashboardLayout(props: PropsWithChildren) {
           <div className="flex justify-end gap-2">
             <LangToggle />
             <ModeToggle />
+          </div>
+
+          <div className="text-muted-foreground flex justify-end gap-2 *:shrink-0">
+            <span className="text-sm">Powered by</span>
+            <NextLogo className="h-4" />
           </div>
         </SidebarFooter>
       </Sidebar>
