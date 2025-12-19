@@ -3,7 +3,7 @@ welcome:
     alt: Next.js logosu
   hero:
     title: Başlamak için, page.tsx dosyasını düzenleyin.
-    description:
+    description: >-
       Bir başlangıç noktası veya daha fazla kaynak mı arıyorsunuz?
       <templates>Şablon</templates> veya <learning>Öğrenme</learning> merkezine
       gidin.
@@ -12,19 +12,17 @@ welcome:
       label: Şimdi Yayınla
     docs:
       label: Dokümantasyon
-
 notFound:
   header:
     title: Sayfa Bulunamadı
   main:
     description: Aradığınız sayfa bulunamadı.
-
 modeToggle:
   option:
     dark: Koyu
     light: Açık
     system: Varsayılan
-
+  toggle: Temayı değiştir
 dashboard:
   sidebar:
     header:
@@ -36,7 +34,6 @@ dashboard:
         label: Oturum
         signOut:
           label: Çıkış Yap
-
     content:
       admin:
         label: Yönetici
@@ -52,7 +49,6 @@ dashboard:
           label: Takvim
         reports:
           label: Raporlar
-
 admin:
   users:
     header:

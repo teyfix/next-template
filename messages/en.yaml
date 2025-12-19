@@ -3,7 +3,7 @@ welcome:
     alt: Next.js logo
   hero:
     title: To get started, edit the page.tsx file.
-    description:
+    description: >-
       Looking for a starting point or more instructions? Head over to
       <templates>Templates</templates> or the <learning>Learning</learning>
       center.
@@ -12,19 +12,17 @@ welcome:
       label: Deploy Now
     docs:
       label: Documentation
-
 notFound:
   header:
     title: Not Found
   main:
     description: The page you are looking for does not exist.
-
 modeToggle:
   option:
     dark: Dark
     light: Light
     system: Default
-
+  toggle: Toggle theme
 dashboard:
   sidebar:
     header:
@@ -36,7 +34,6 @@ dashboard:
         label: Session
         signOut:
           label: Sign Out
-
     content:
       admin:
         label: Admin
@@ -52,7 +49,6 @@ dashboard:
           label: Calendar
         reports:
           label: Reports
-
 admin:
   users:
     header:
