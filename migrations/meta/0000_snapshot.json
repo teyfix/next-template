@@ -1,0 +1,20 @@
+{
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  },
+  "dialect": "postgresql",
+  "enums": {},
+  "id": "76cf4ea9-9988-4984-b7cb-4d0846938956",
+  "policies": {},
+  "prevId": "00000000-0000-0000-0000-000000000000",
+  "roles": {},
+  "schemas": {
+    "template": "template"
+  },
+  "sequences": {},
+  "tables": {},
+  "version": "7",
+  "views": {}
+}
