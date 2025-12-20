@@ -53,3 +53,9 @@ admin:
   users:
     header:
       title: Kullanıcılar
+rootLayout:
+  metadata:
+    title: Next.js App Router Başlangıç Şablonu
+    description:
+      i18n, tema desteği, sunucu durumu ve production’a hazır araçlarla gelen,
+      opinionated bir Next.js App Router şablonu.

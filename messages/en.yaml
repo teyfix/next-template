@@ -53,3 +53,9 @@ admin:
   users:
     header:
       title: Users
+rootLayout:
+  metadata:
+    title: Next.js App Router Starter
+    description:
+      Opinionated Next.js App Router template with i18n, theming, server state,
+      and production-ready tooling.
