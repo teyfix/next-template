@@ -8,6 +8,8 @@ save setup time while maintaining flexibility for different project needs.
 
 ## Current Features
 
+- **Database:** `Drizzle ORM` with `Neon` (Postgres) integration
+
 - **Localization:** `next-intl` for multi-language support
 
 - **Theming:** `next-themes` with light/dark mode
@@ -36,7 +38,6 @@ single `Providers` component for easy setup.
 ## Planned Additions
 
 - **Authentication:** `Better Auth` integration
-- **Database:** `Drizzle ORM` + `Neon database` support
 - **CSS-in-JS:** `@tw-classed/react` will be added soon
 
 ---
