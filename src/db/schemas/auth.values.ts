@@ -1,0 +1,40 @@
+import type { UnionToTuple } from "type-fest";
+import type { AccountProvider } from "@/lib/auth";
+
+export const userRoles = ["admin", "user"] as const;
+
+export const accountProviders: UnionToTuple<AccountProvider> = [
+  // "apple",
+  // "atlassian",
+  // "cognito",
+  // "discord",
+  // "dropbox",
+  // "facebook",
+  // "figma",
+  // "github",
+  // "gitlab",
+  "google",
+  // "huggingface",
+  // "kakao",
+  // "kick",
+  // "line",
+  // "linear",
+  // "linkedin",
+  // "microsoft",
+  // "naver",
+  // "notion",
+  // "paybin",
+  // "paypal",
+  // "polar",
+  // "reddit",
+  // "roblox",
+  // "salesforce",
+  // "slack",
+  // "spotify",
+  // "tiktok",
+  // "twitch",
+  // "twitter",
+  // "vercel",
+  // "vk",
+  // "zoom",
+];

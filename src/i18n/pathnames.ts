@@ -41,6 +41,14 @@ export const pathnames = {
     en: "/app/reports",
     tr: "/panel/raporlar",
   },
+  "/auth/login": {
+    en: "/login",
+    tr: "/giris-yap",
+  },
+  "/hello": {
+    en: "/hello",
+    tr: "/merhaba",
+  },
 } as const satisfies Pathnames<typeof locales>;
 
 export const routes = {

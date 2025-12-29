@@ -56,6 +56,22 @@ admin:
 rootLayout:
   metadata:
     title: Next.js App Router Starter
-    description:
+    description: >-
       Opinionated Next.js App Router template with i18n, theming, server state,
       and production-ready tooling.
+auth:
+  login:
+    header:
+      title: Login
+      description: Login with a provider or continue as a guest
+    buttons:
+      google:
+        label: Login with Google
+      anon:
+        label: Continue as guest
+hello:
+  header:
+    title: Hello!
+  content:
+    greetings: It's nice to see you <strong>{name}</strong>!
+    description: This page verifies you are successfully signed in.

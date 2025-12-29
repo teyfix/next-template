@@ -56,6 +56,22 @@ admin:
 rootLayout:
   metadata:
     title: Next.js App Router Başlangıç Şablonu
-    description:
+    description: >-
       i18n, tema desteği, sunucu durumu ve production’a hazır araçlarla gelen,
       opinionated bir Next.js App Router şablonu.
+auth:
+  login:
+    header:
+      title: Giriş Yap
+      description: Bir sağlayıcıyla giriş yapın ya da misafir olarak devam edin
+    buttons:
+      google:
+        label: Google ile giriş yap
+      anon:
+        label: Misafir olarak devam et
+hello:
+  header:
+    title: Merhaba!
+  content:
+    greetings: Seni görmek güzel <strong>{name}</strong>!
+    description: Bu sayfa başarıyla giriş yaptığınızı gösterir.

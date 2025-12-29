@@ -42,6 +42,10 @@
           "level": "error",
           "options": {
             "paths": {
+              "drizzle-orm/pg-core": {
+                "importNames": ["timestamp"],
+                "message": "Please use @/db/custom/utils for timestamp data type"
+              },
               "lucide-react": {
                 "importNames": ["Link"],
                 "message": "You probably meant to import <Link /> from @/i18n/routing"
@@ -74,6 +78,10 @@
               "level": "error",
               "options": {
                 "paths": {
+                  "drizzle-orm/pg-core": {
+                    "importNames": ["timestamp"],
+                    "message": "Please use @/db/custom/utils for timestamp data type"
+                  },
                   "lucide-react": {
                     "importNames": ["Link"],
                     "message": "You probably meant to import <Link /> from @/i18n/routing"

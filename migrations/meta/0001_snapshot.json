@@ -1,0 +1,413 @@
+{
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  },
+  "dialect": "postgresql",
+  "enums": {
+    "better_auth.account_provider": {
+      "name": "account_provider",
+      "schema": "better_auth",
+      "values": ["google"]
+    },
+    "better_auth.user_role": {
+      "name": "user_role",
+      "schema": "better_auth",
+      "values": ["admin", "user"]
+    }
+  },
+  "id": "88133443-178c-4f02-84a2-db0a7bd15473",
+  "policies": {},
+  "prevId": "76cf4ea9-9988-4984-b7cb-4d0846938956",
+  "roles": {},
+  "schemas": {
+    "better_auth": "better_auth",
+    "template": "template"
+  },
+  "sequences": {},
+  "tables": {
+    "better_auth.accounts": {
+      "checkConstraints": {},
+      "columns": {
+        "access_token": {
+          "name": "access_token",
+          "notNull": false,
+          "primaryKey": false,
+          "type": "text"
+        },
+        "access_token_expires_at": {
+          "name": "access_token_expires_at",
+          "notNull": false,
+          "primaryKey": false,
+          "type": "timestamp"
+        },
+        "account_id": {
+          "name": "account_id",
+          "notNull": true,
+          "primaryKey": false,
+          "type": "text"
+        },
+        "created_at": {
+          "name": "created_at",
+          "notNull": true,
+          "primaryKey": false,
+          "type": "timestamp"
+        },
+        "id": {
+          "name": "id",
+          "notNull": true,
+          "primaryKey": true,
+          "type": "uuid"
+        },
+        "id_token": {
+          "name": "id_token",
+          "notNull": false,
+          "primaryKey": false,
+          "type": "text"
+        },
+        "password": {
+          "name": "password",
+          "notNull": false,
+          "primaryKey": false,
+          "type": "text"
+        },
+        "provider_id": {
+          "name": "provider_id",
+          "notNull": true,
+          "primaryKey": false,
+          "type": "account_provider",
+          "typeSchema": "better_auth"
+        },
+        "refresh_token": {
+          "name": "refresh_token",
+          "notNull": false,
+          "primaryKey": false,
+          "type": "text"
+        },
+        "refresh_token_expires_at": {
+          "name": "refresh_token_expires_at",
+          "notNull": false,
+          "primaryKey": false,
+          "type": "timestamp"
+        },
+        "scope": {
+          "name": "scope",
+          "notNull": false,
+          "primaryKey": false,
+          "type": "text"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "notNull": true,
+          "primaryKey": false,
+          "type": "timestamp"
+        },
+        "user_id": {
+          "name": "user_id",
+          "notNull": true,
+          "primaryKey": false,
+          "type": "uuid"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "foreignKeys": {
+        "accounts_user_id_users_id_fk": {
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
+          "name": "accounts_user_id_users_id_fk",
+          "onDelete": "cascade",
+          "onUpdate": "no action",
+          "schemaTo": "better_auth",
+          "tableFrom": "accounts",
+          "tableTo": "users"
+        }
+      },
+      "indexes": {
+        "accounts_userId_idx": {
+          "columns": [
+            {
+              "asc": true,
+              "expression": "user_id",
+              "isExpression": false,
+              "nulls": "last"
+            }
+          ],
+          "concurrently": false,
+          "isUnique": false,
+          "method": "btree",
+          "name": "accounts_userId_idx",
+          "with": {}
+        }
+      },
+      "isRLSEnabled": false,
+      "name": "accounts",
+      "policies": {},
+      "schema": "better_auth",
+      "uniqueConstraints": {}
+    },
+    "better_auth.sessions": {
+      "checkConstraints": {},
+      "columns": {
+        "created_at": {
+          "name": "created_at",
+          "notNull": true,
+          "primaryKey": false,
+          "type": "timestamp"
+        },
+        "expires_at": {
+          "name": "expires_at",
+          "notNull": true,
+          "primaryKey": false,
+          "type": "timestamp"
+        },
+        "id": {
+          "name": "id",
+          "notNull": true,
+          "primaryKey": true,
+          "type": "uuid"
+        },
+        "impersonated_by": {
+          "name": "impersonated_by",
+          "notNull": false,
+          "primaryKey": false,
+          "type": "text"
+        },
+        "ip_address": {
+          "name": "ip_address",
+          "notNull": false,
+          "primaryKey": false,
+          "type": "text"
+        },
+        "token": {
+          "name": "token",
+          "notNull": true,
+          "primaryKey": false,
+          "type": "text"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "notNull": true,
+          "primaryKey": false,
+          "type": "timestamp"
+        },
+        "user_agent": {
+          "name": "user_agent",
+          "notNull": false,
+          "primaryKey": false,
+          "type": "text"
+        },
+        "user_id": {
+          "name": "user_id",
+          "notNull": true,
+          "primaryKey": false,
+          "type": "uuid"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "foreignKeys": {
+        "sessions_user_id_users_id_fk": {
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
+          "name": "sessions_user_id_users_id_fk",
+          "onDelete": "cascade",
+          "onUpdate": "no action",
+          "schemaTo": "better_auth",
+          "tableFrom": "sessions",
+          "tableTo": "users"
+        }
+      },
+      "indexes": {
+        "sessions_userId_idx": {
+          "columns": [
+            {
+              "asc": true,
+              "expression": "user_id",
+              "isExpression": false,
+              "nulls": "last"
+            }
+          ],
+          "concurrently": false,
+          "isUnique": false,
+          "method": "btree",
+          "name": "sessions_userId_idx",
+          "with": {}
+        }
+      },
+      "isRLSEnabled": false,
+      "name": "sessions",
+      "policies": {},
+      "schema": "better_auth",
+      "uniqueConstraints": {
+        "sessions_token_unique": {
+          "columns": ["token"],
+          "name": "sessions_token_unique",
+          "nullsNotDistinct": false
+        }
+      }
+    },
+    "better_auth.users": {
+      "checkConstraints": {},
+      "columns": {
+        "ban_expires": {
+          "name": "ban_expires",
+          "notNull": false,
+          "primaryKey": false,
+          "type": "timestamp"
+        },
+        "ban_reason": {
+          "name": "ban_reason",
+          "notNull": false,
+          "primaryKey": false,
+          "type": "text"
+        },
+        "banned": {
+          "default": false,
+          "name": "banned",
+          "notNull": false,
+          "primaryKey": false,
+          "type": "boolean"
+        },
+        "created_at": {
+          "name": "created_at",
+          "notNull": true,
+          "primaryKey": false,
+          "type": "timestamp"
+        },
+        "email": {
+          "name": "email",
+          "notNull": true,
+          "primaryKey": false,
+          "type": "text"
+        },
+        "email_verified": {
+          "default": false,
+          "name": "email_verified",
+          "notNull": true,
+          "primaryKey": false,
+          "type": "boolean"
+        },
+        "id": {
+          "name": "id",
+          "notNull": true,
+          "primaryKey": true,
+          "type": "uuid"
+        },
+        "image": {
+          "name": "image",
+          "notNull": false,
+          "primaryKey": false,
+          "type": "text"
+        },
+        "is_anonymous": {
+          "default": false,
+          "name": "is_anonymous",
+          "notNull": false,
+          "primaryKey": false,
+          "type": "boolean"
+        },
+        "name": {
+          "name": "name",
+          "notNull": true,
+          "primaryKey": false,
+          "type": "text"
+        },
+        "role": {
+          "default": "'user'",
+          "name": "role",
+          "notNull": true,
+          "primaryKey": false,
+          "type": "user_role",
+          "typeSchema": "better_auth"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "notNull": true,
+          "primaryKey": false,
+          "type": "timestamp"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "foreignKeys": {},
+      "indexes": {},
+      "isRLSEnabled": false,
+      "name": "users",
+      "policies": {},
+      "schema": "better_auth",
+      "uniqueConstraints": {
+        "users_email_unique": {
+          "columns": ["email"],
+          "name": "users_email_unique",
+          "nullsNotDistinct": false
+        }
+      }
+    },
+    "better_auth.verifications": {
+      "checkConstraints": {},
+      "columns": {
+        "created_at": {
+          "name": "created_at",
+          "notNull": true,
+          "primaryKey": false,
+          "type": "timestamp"
+        },
+        "expires_at": {
+          "name": "expires_at",
+          "notNull": true,
+          "primaryKey": false,
+          "type": "timestamp"
+        },
+        "id": {
+          "name": "id",
+          "notNull": true,
+          "primaryKey": true,
+          "type": "uuid"
+        },
+        "identifier": {
+          "name": "identifier",
+          "notNull": true,
+          "primaryKey": false,
+          "type": "text"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "notNull": true,
+          "primaryKey": false,
+          "type": "timestamp"
+        },
+        "value": {
+          "name": "value",
+          "notNull": true,
+          "primaryKey": false,
+          "type": "text"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "foreignKeys": {},
+      "indexes": {
+        "verifications_identifier_idx": {
+          "columns": [
+            {
+              "asc": true,
+              "expression": "identifier",
+              "isExpression": false,
+              "nulls": "last"
+            }
+          ],
+          "concurrently": false,
+          "isUnique": false,
+          "method": "btree",
+          "name": "verifications_identifier_idx",
+          "with": {}
+        }
+      },
+      "isRLSEnabled": false,
+      "name": "verifications",
+      "policies": {},
+      "schema": "better_auth",
+      "uniqueConstraints": {}
+    }
+  },
+  "version": "7",
+  "views": {}
+}
